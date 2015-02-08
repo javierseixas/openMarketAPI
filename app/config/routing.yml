@@ -1,0 +1,7 @@
+open_market_api:
+    resource: "@OpenMarketAPIBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
