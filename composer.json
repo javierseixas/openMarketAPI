@@ -21,7 +21,10 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "nelmio/api-doc-bundle": "~2.7",
         "friendsofsymfony/rest-bundle": "~1.5",
-        "jms/serializer-bundle": "0.13.*"
+        "jms/serializer-bundle": "0.13.*",
+        "lexik/jwt-authentication-bundle": "~1.0",
+        "gfreeau/get-jwt-bundle": "~1.0",
+        "victuxbb/jsonpatch": "~1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

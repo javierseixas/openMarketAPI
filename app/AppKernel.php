@@ -21,6 +21,8 @@ class AppKernel extends Kernel
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new OpenMarket\APIBundle\OpenMarketAPIBundle(),
             new OpenMarket\AuthenticationBundle\OpenMarketAuthenticationBundle(),
+            new Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle(),
+            new Gfreeau\Bundle\GetJWTBundle\GfreeauGetJWTBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

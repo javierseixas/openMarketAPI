@@ -2,8 +2,8 @@ imports:
     - { resource: fos_rest.yml }
     - { resource: nelmio_api_doc.yml }
     - { resource: jms_serializer.yml }
+    - { resource: lexik_jwt_authentication.yml }
     - { resource: parameters.yml }
-    - { resource: security.yml }
     - { resource: services.yml }
 
 framework:

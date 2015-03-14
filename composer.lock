@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dac6b18c4a6481194491b74c244ccf25",
+    "hash": "ca97ed5ae2e2f67a4ab4c1f6c22286f4",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -789,6 +789,54 @@
             "time": "2015-01-27 09:39:58"
         },
         {
+            "name": "gfreeau/get-jwt-bundle",
+            "version": "1.0.0",
+            "target-dir": "Gfreeau/Bundle/GetJWTBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gfreeau/GfreeauGetJWTBundle.git",
+                "reference": "b80befba1c7a88a734e509ea87b92da8c60bfcfb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gfreeau/GfreeauGetJWTBundle/zipball/b80befba1c7a88a734e509ea87b92da8c60bfcfb",
+                "reference": "b80befba1c7a88a734e509ea87b92da8c60bfcfb",
+                "shasum": ""
+            },
+            "require": {
+                "lexik/jwt-authentication-bundle": "1.0.*@dev",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "~2.3",
+                "symfony/symfony": "~2.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Gfreeau\\Bundle\\GetJWTBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Freeman",
+                    "homepage": "http://www.gregfreeman.org"
+                }
+            ],
+            "description": "This Symfony2 bundle provides a security listener to return a JWT",
+            "homepage": "https://github.com/gfreeau/GfreeauGetJWTBundle",
+            "keywords": [
+                "Authentication",
+                "JWS",
+                "Symfony2",
+                "bundle",
+                "jwt"
+            ],
+            "time": "2014-10-29 04:10:39"
+        },
+        {
             "name": "incenteev/composer-parameter-handler",
             "version": "v2.1.0",
             "target-dir": "Incenteev/ParameterHandler",
@@ -1192,6 +1240,76 @@
             "time": "2014-12-12 05:04:05"
         },
         {
+            "name": "lexik/jwt-authentication-bundle",
+            "version": "v1.0.6",
+            "target-dir": "Lexik/Bundle/JWTAuthenticationBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lexik/LexikJWTAuthenticationBundle.git",
+                "reference": "624bfc813436af2cd6107c791ad09e44bbd8de1c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lexik/LexikJWTAuthenticationBundle/zipball/624bfc813436af2cd6107c791ad09e44bbd8de1c",
+                "reference": "624bfc813436af2cd6107c791ad09e44bbd8de1c",
+                "shasum": ""
+            },
+            "require": {
+                "namshi/jose": "~1.2",
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "~2.3",
+                "symfony/symfony": "~2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Lexik\\Bundle\\JWTAuthenticationBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Barthe",
+                    "email": "j.barthe@lexik.fr"
+                },
+                {
+                    "name": "Dev Lexik",
+                    "email": "dev@lexik.fr"
+                },
+                {
+                    "name": "Cedric Girard",
+                    "email": "c.girard@lexik.fr"
+                },
+                {
+                    "name": "Nicolas Cabot",
+                    "email": "n.cabot@lexik.fr"
+                }
+            ],
+            "description": "This bundle provides JWT authentication for your Symfony2 REST API",
+            "homepage": "https://github.com/lexik/LexikJWTAuthenticationBundle",
+            "keywords": [
+                "Authentication",
+                "JWS",
+                "Symfony2",
+                "api",
+                "bundle",
+                "jwt",
+                "rest"
+            ],
+            "time": "2015-02-17 15:53:54"
+        },
+        {
             "name": "michelf/php-markdown",
             "version": "1.4.1",
             "source": {
@@ -1313,6 +1431,55 @@
                 "psr-3"
             ],
             "time": "2014-12-29 21:29:35"
+        },
+        {
+            "name": "namshi/jose",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/namshi/jose.git",
+                "reference": "92b686181c22c5a2141c18b8cd458b7f51b6e5c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/namshi/jose/zipball/92b686181c22c5a2141c18b8cd458b7f51b6e5c7",
+                "reference": "92b686181c22c5a2141c18b8cd458b7f51b6e5c7",
+                "shasum": ""
+            },
+            "require": {
+                "lib-openssl": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Namshi\\JOSE": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alessandro Nadalin",
+                    "email": "alessandro.nadalin@gmail.com"
+                }
+            ],
+            "description": "JSON Object Signing and Encryption library for PHP.",
+            "keywords": [
+                "JSON Web Signature",
+                "JSON Web Token",
+                "JWS",
+                "json",
+                "jwt",
+                "token"
+            ],
+            "time": "2015-02-17 14:52:16"
         },
         {
             "name": "nelmio/api-doc-bundle",
@@ -2136,6 +2303,53 @@
                 "templating"
             ],
             "time": "2015-01-25 17:32:08"
+        },
+        {
+            "name": "victuxbb/jsonpatch",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/victuxbb/jsonpatch.git",
+                "reference": "ac4618ca9e47fed5cff25171e9e5ab802b3a0e5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/victuxbb/jsonpatch/zipball/ac4618ca9e47fed5cff25171e9e5ab802b3a0e5c",
+                "reference": "ac4618ca9e47fed5cff25171e9e5ab802b3a0e5c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "victuxbb\\JsonPatch": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Victor Caldentey",
+                    "email": "victuxbb@gmail.com",
+                    "homepage": "https://github.com/victuxbb"
+                }
+            ],
+            "description": "Implementation of JSON Patch (http://tools.ietf.org/html/rfc6902)",
+            "homepage": "https://github.com/victuxbb/jsonpatch",
+            "keywords": [
+                "json",
+                "json operations",
+                "json pointer",
+                "patch operations"
+            ],
+            "time": "2015-01-12 00:33:20"
         },
         {
             "name": "willdurand/jsonp-callback-validator",
