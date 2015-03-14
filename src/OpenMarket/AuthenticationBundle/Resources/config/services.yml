@@ -1,8 +1,0 @@
-parameters:
-    user_repository.in_memory.class: OpenMarket\AuthenticationBundle\Repository\InMemoryUserRepository
-
-services:
-    user_repository.in_memory:
-        class: %user_repository.in_memory.class%
-        public: false
-    user_repository: @user_repository.in_memory

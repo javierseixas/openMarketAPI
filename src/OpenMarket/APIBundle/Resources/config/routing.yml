@@ -1,6 +1,6 @@
 camion:
-    type:     rest
-    resource: OpenMarket\APIBundle\Controller\DefaultController
+  type:     rest
+  resource: OpenMarket\APIBundle\Controller\DefaultController
 
 users:
   type:     rest
