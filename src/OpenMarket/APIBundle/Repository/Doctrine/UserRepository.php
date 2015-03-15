@@ -8,30 +8,41 @@
 
 namespace OpenMarket\APIBundle\Repository\Doctrine;
 
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 use OpenMarket\APIBundle\Entity\BaseId;
 use OpenMarket\APIBundle\Repository\BaseRepositoryInterface;
 
 
-class UserRepository extends EntityRepository implements BaseRepositoryInterface{
+class UserRepository implements BaseRepositoryInterface{
+    private $entityRepository;
+    private $entityManager;
 
-    public function find(BaseId $baseId)
+    public function __construct(EntityManager $entityManager, EntityRepository $entityRepository)
     {
-        // TODO: Implement find() method.
+        $this->entityRepository = $entityRepository;
+        $this->entityManager = $entityManager;
+    }
+
+    public function find(BaseId $userId)
+    {
+        return $this->entityRepository->find($userId->getValue());
     }
 
     public function findAll()
     {
-        // TODO: Implement findAll() method.
+        return $this->entityRepository->findAll();
     }
 
-    public function save($object)
+    public function add($user)
     {
-        // TODO: Implement save() method.
+        $this->entityManager->persist($user);
+        $this->entityManager->flush($user);
     }
 
-    public function remove(BaseId $baseId)
+    public function remove($user)
     {
-        // TODO: Implement remove() method.
+        $this->entityManager->remove($user);
+        $this->entityManager->flush($user);
     }
 }

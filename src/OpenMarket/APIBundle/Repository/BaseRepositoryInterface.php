@@ -10,12 +10,12 @@ namespace OpenMarket\APIBundle\Repository;
 
 use OpenMarket\APIBundle\Entity\BaseId;
 
-interface BaseRepositoryInterface {
+interface BaseRepositoryInterface{
     public function find(BaseId $baseId);
 
     public function findAll();
 
-    public function save($object);
+    public function add($object);
 
-    public function remove(BaseId $baseId);
+    public function remove($object);
 }
