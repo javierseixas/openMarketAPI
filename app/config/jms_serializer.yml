@@ -2,6 +2,6 @@ jms_serializer:
     metadata:
         auto_detection: false
         directories:
-            Authentication:
-                namespace_prefix: "OpenMarket\\Authentication"
-                path: "@OpenMarketAPIBundle/Resources/config/serializer/"
+            APIBundle:
+                namespace_prefix: "OpenMarket\\APIBundle"
+                path: "@OpenMarketAPIBundle/Resources/config/serializer"

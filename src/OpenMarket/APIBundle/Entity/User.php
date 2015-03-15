@@ -26,25 +26,58 @@ class User
      */
     private $lastName;
 
-    public function __construct(UserId $id, $firstName, $lastName)
+    public function __construct()
     {
-        $this->id        = $id;
-        $this->firstName = $firstName;
-        $this->lastName  = $lastName;
+        $this->id = new UserId();
     }
 
+    /**
+     * @param UserId $id
+     */
+    public function setId(UserId $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @param mixed $firstName
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+    }
+
+    /**
+     * @param mixed $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * @return UserId
+     */
     public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * @return mixed
+     */
     public function getFirstName()
     {
         return $this->firstName;
     }
 
+    /**
+     * @return mixed
+     */
     public function getLastName()
     {
         return $this->lastName;
     }
+
+
 }

@@ -8,13 +8,13 @@
 
 namespace OpenMarket\APIBundle\Entity;
 
-use Symfony\Component\Validator\Constraints as Assert;
+use Rhumsaa\Uuid\Uuid;
 
 class UserId extends BaseId
 {
-    public function __construct($value = False)
+    public function __construct($value = false)
     {
-        $this->value = (string) Uuid::uuid4();
+        $this->value = (string) $value?:Uuid::uuid4();
     }
 
 }
