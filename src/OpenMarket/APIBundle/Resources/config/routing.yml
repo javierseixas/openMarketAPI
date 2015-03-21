@@ -5,3 +5,7 @@ camion:
 users:
   type:     rest
   resource: OpenMarket\APIBundle\Controller\UserController
+
+tokens:
+  type:     rest
+  resource: OpenMarket\APIBundle\Controller\TokenController
