@@ -20,6 +20,7 @@ class UserController extends FOSRestController {
      * annotation.
      *
      * @ApiDoc(
+     *  section="User",
      *  resource=true,
      *  description="This is a description of your API method",
      * )
