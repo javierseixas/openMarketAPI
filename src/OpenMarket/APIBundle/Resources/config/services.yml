@@ -1,5 +1,6 @@
 parameters:
     api_bundle.db.table_prefix: api_
+
 services:
     api_bundle.tblprefix_subscriber:
         class: OpenMarket\APIBundle\Subscriber\TablePrefixSubscriber
@@ -15,11 +16,16 @@ services:
         arguments:
             - OpenMarket\APIBundle\Entity\User
 
+#    user_repository:
+#        class: OpenMarket\APIBundle\Repository\Doctrine\UserRepository
+#        arguments:
+#            - @doctrine.orm.entity_manager
+#            - @base_user_repository
+
     user_repository:
-        class: OpenMarket\APIBundle\Repository\Doctrine\UserRepository
+        class: OpenMarket\APIBundle\Repository\Yaml\UserRepository
         arguments:
-            - @doctrine.orm.entity_manager
-            - @base_user_repository
+            - "%kernel.cache_dir%/userRepository"
 
     jms_serializer.object_constructor:
         alias: jms_serializer.initialized_object_constructor

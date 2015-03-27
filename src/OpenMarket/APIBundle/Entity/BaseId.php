@@ -12,9 +12,7 @@ namespace OpenMarket\APIBundle\Entity;
 use Symfony\Component\Validator\Constraints as Assert;
 
 abstract class BaseId {
-    /**
-     * @Assert\NotBlank
-     */
+
     protected $value;
 
     public function getValue()

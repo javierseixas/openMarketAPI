@@ -2,16 +2,20 @@ OpenMarket\APIBundle\Entity\User:
     exclusion_policy: ALL
     properties:
         id:
+            since_version: 1.0
             expose: true
             inline: true
-            serialized_name: id
             type: OpenMarket\APIBundle\Entity\UserId
-            groups: [default]
+            groups: [Default]
         firstName:
+            since_version: 1.0
             expose: true
+            type: string
             serialized_name: first_name
-            groups: [default]
+            groups: [Default,Post]
         lastName:
+            since_version: 1.0
             expose: true
+            type: string
             serialized_name: last_name
-            groups: [default]
+            groups: [Default,Post]
