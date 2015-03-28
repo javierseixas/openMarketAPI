@@ -84,7 +84,7 @@ class UserController extends FOSRestController {
      *      description="This is a description of your API method",
      *      input = {
      *          "class" = "OpenMarket\APIBundle\Entity\User",
-     *          "groups" = {"Post"}
+     *          "groups" = {"Create"}
      *      },
      *      output = {
      *          "class" = "OpenMarket\APIBundle\Entity\User",
@@ -104,7 +104,7 @@ class UserController extends FOSRestController {
 
         $serializer = $this->get("jms_serializer");
 
-        $deSerializerGroup = array('Post');
+        $deSerializerGroup = array('Create');
 
         $user = new User();
 

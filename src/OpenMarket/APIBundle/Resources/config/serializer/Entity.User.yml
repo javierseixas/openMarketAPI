@@ -12,10 +12,10 @@ OpenMarket\APIBundle\Entity\User:
             expose: true
             type: string
             serialized_name: first_name
-            groups: [Default,Post]
+            groups: [Default,Create]
         lastName:
             since_version: 1.0
             expose: true
             type: string
             serialized_name: last_name
-            groups: [Default,Post]
+            groups: [Default,Create]
