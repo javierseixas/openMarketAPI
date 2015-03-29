@@ -8,6 +8,6 @@ web:
   volumes:
     - .:/code
 db:
-  image: postgres
+  build: ./docker_db
   ports:
     - "5432:5432"
