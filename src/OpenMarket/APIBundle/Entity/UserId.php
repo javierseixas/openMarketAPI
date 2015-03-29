@@ -14,7 +14,7 @@ class UserId extends BaseId
 {
     public function __construct($value = false)
     {
-        $this->value = (string) $value?:Uuid::uuid4();
+        $this->value = (string) ($value?:Uuid::uuid4());
     }
 
 }

@@ -1,0 +1,7 @@
+OpenMarket\APIBundle\Entity\BaseId:
+    exclusion_policy: ALL
+    properties:
+        value:
+            expose: true
+            serialized_name: id
+            groups: [Default]

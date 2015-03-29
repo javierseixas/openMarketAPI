@@ -1,0 +1,9 @@
+OpenMarket\APIBundle\Entity\User:
+    properties:
+        firstName:
+            - NotBlank: { groups: [Default] }
+            - Length: { min: 3, groups: [Default] }
+
+        lastName:
+            - NotBlank: { groups: [Default] }
+            - Length: { min: 3, groups: [Default] }

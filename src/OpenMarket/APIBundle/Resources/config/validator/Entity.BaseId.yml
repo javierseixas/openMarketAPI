@@ -1,0 +1,4 @@
+OpenMarket\APIBundle\Entity\BaseId:
+    properties:
+        value:
+            - NotBlank: { groups: [Default] }

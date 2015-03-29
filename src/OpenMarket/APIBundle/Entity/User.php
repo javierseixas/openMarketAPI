@@ -12,23 +12,31 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class User
 {
+    /**
+     * @var UserId
+     */
     private $id;
 
     /**
-     * @Assert\Length(min = 3)
-     * @Assert\NotBlank
+     * @var string
      */
     private $firstName;
 
     /**
-     * @Assert\Length(min = 3)
-     * @Assert\NotBlank
+     * @var string
      */
     private $lastName;
 
-    public function __construct()
+    /**
+     * @param UserId $id
+     * @param string $firstName
+     * @param string $lastName
+     */
+    public function __construct(UserId $id = null, $firstName = null, $lastName = null)
     {
-        $this->id = new UserId();
+        $this->id = $id ? $id : new UserId();
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
     }
 
     /**
@@ -40,7 +48,7 @@ class User
     }
 
     /**
-     * @param mixed $firstName
+     * @param string $firstName
      */
     public function setFirstName($firstName)
     {
@@ -48,7 +56,7 @@ class User
     }
 
     /**
-     * @param mixed $lastName
+     * @param string $lastName
      */
     public function setLastName($lastName)
     {
@@ -64,7 +72,7 @@ class User
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getFirstName()
     {
@@ -72,7 +80,7 @@ class User
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getLastName()
     {
