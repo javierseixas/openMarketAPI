@@ -1,0 +1,18 @@
+OpenMarket\APIBundle\Entity\User:
+    type: entity
+    repositoryClass: OpenMarket\APIBundle\Repository\Doctrine\UserRepository
+    table: user
+    readOnly: false
+    id:
+        id:
+            type: string
+            length: 50
+            generator:
+                strategy: None
+    fields:
+        firstName:
+            type: string
+            length: 50
+        lastName:
+            type: string
+            length: 50

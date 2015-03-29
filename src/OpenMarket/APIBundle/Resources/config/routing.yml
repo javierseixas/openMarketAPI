@@ -9,3 +9,4 @@ users:
 tokens:
   type:     rest
   resource: OpenMarket\APIBundle\Controller\TokenController
+

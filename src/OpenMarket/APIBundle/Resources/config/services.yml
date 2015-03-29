@@ -1,4 +1,10 @@
 services:
+    user_repository:
+        class: Doctrine\ORM\EntityRepository
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments:
+            - OpenMarket\APIBundle\Entity\User
 #    open_market_api.example:
 #        class: OpenMarket\APIBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
