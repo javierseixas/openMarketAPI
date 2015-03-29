@@ -8,7 +8,6 @@
 
 namespace OpenMarket\APIBundle\Entity;
 
-use Symfony\Component\Validator\Constraints as Assert;
 
 class User
 {
