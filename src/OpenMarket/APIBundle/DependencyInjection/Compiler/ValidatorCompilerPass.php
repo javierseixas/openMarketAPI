@@ -17,17 +17,21 @@ class ValidatorCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        $validatorBuilder = $container->getDefinition('validator.builder');
-        $validatorFiles = array();
-        $finder = new Finder();
+        $bundleClassName = "OpenMarket\APIBundle\OpenMarketAPIBundle";
+        $reflection = new \ReflectionClass($bundleClassName);
+        $validatorPath = $file = dirname($reflection->getFilename()) . '/Resources/config/validator';
+        if (is_dir($validatorPath)) {
+            $validatorBuilder = $container->getDefinition('validator.builder');
+            $validatorFiles = array();
+            $finder = new Finder();
+            foreach ($finder->files()->in($validatorPath) as $file) {
+                $validatorFiles[] = $file->getRealPath();
+            }
 
-        foreach ($finder->files()->in(__DIR__ . '/../../Resources/config/validator') as $file) {
-            $validatorFiles[] = $file->getRealPath();
+            $validatorBuilder->addMethodCall('addYamlMappings', array($validatorFiles));
+
+            // add resources to the container to refresh cache after updating a file
+            $container->addResource(new DirectoryResource($validatorPath));
         }
-
-        $validatorBuilder->addMethodCall('addYamlMappings', array($validatorFiles));
-
-        // add resources to the container to refresh cache after updating a file
-        $container->addResource(new DirectoryResource(__DIR__ . '/../../Resources/config/validator'));
     }
 }
