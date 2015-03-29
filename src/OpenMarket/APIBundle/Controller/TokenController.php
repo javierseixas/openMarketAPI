@@ -21,4 +21,4 @@ class TokenController extends FOSRestController
         return new Response('', 401);
     }
 
-} 
+}

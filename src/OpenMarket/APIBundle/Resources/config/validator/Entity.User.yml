@@ -7,3 +7,4 @@ OpenMarket\APIBundle\Entity\User:
         lastName:
             - NotBlank: { groups: [Default] }
             - Length: { min: 3, groups: [Default] }
+

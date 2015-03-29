@@ -19,3 +19,4 @@ OpenMarket\APIBundle\Entity\User:
             type: string
             serialized_name: last_name
             groups: [Default,Create]
+

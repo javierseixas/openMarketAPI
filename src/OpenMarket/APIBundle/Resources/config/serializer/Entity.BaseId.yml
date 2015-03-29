@@ -5,3 +5,4 @@ OpenMarket\APIBundle\Entity\BaseId:
             expose: true
             serialized_name: id
             groups: [Default]
+
