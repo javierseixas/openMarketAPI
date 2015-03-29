@@ -1,5 +1,5 @@
 parameters:
-    api_bundle.db.table_prefix: api_
+    api_bundle.db.table_prefix: openmarket_
 
 services:
     api_bundle.tblprefix_subscriber:
@@ -16,16 +16,11 @@ services:
         arguments:
             - OpenMarket\APIBundle\Entity\User
 
-#    user_repository:
-#        class: OpenMarket\APIBundle\Repository\Doctrine\UserRepository
-#        arguments:
-#            - @doctrine.orm.entity_manager
-#            - @base_user_repository
-
     user_repository:
-        class: OpenMarket\APIBundle\Repository\Yaml\UserRepository
+        class: OpenMarket\APIBundle\Repository\Doctrine\UserRepository
         arguments:
-            - "%kernel.cache_dir%/userRepository"
+            - @doctrine.orm.entity_manager
+            - @base_user_repository
 
     jms_serializer.object_constructor:
         alias: jms_serializer.initialized_object_constructor
@@ -36,6 +31,3 @@ services:
          arguments:
             - @jms_serializer.doctrine_object_constructor
 
-#    open_market_api.example:
-#        class: OpenMarket\APIBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

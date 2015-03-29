@@ -23,7 +23,7 @@ class NelmioJmsSerializerParserCompilerPass implements CompilerPassInterface{
      */
     public function process(ContainerBuilder $container)
     {
-        $definition = $container->getDefinition('nelmio_api_doc.parser.jms_metadata_parser');
-        $definition->setClass('OpenMarket\APIBundle\Service\JmsMetadataParser');
+       /* $definition = $container->getDefinition('nelmio_api_doc.parser.jms_metadata_parser');
+        $definition->setClass('OpenMarket\APIBundle\Service\JmsMetadataParser');*/
     }
 }

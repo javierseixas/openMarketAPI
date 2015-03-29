@@ -11,9 +11,7 @@ namespace OpenMarket\APIBundle\Entity;
 
 class User
 {
-    /**
-     * @var UserId
-     */
+
     private $id;
 
     /**
@@ -31,7 +29,7 @@ class User
      * @param string $firstName
      * @param string $lastName
      */
-    public function __construct(UserId $id = null, $firstName = null, $lastName = null)
+    public function __construct($id = null, $firstName = null, $lastName = null)
     {
         $this->id = $id ? $id : new UserId();
         $this->firstName = $firstName;
@@ -41,9 +39,9 @@ class User
     /**
      * @param UserId $id
      */
-    public function setId(UserId $id)
+    public function setId($id)
     {
-        $this->id = $id;
+        $this->id = new UserId($id);
     }
 
     /**

@@ -17,4 +17,9 @@ class UserId extends BaseId
         $this->value = (string) ($value?:Uuid::uuid4());
     }
 
+    public function __toString()
+    {
+        return $this->value;
+    }
+
 }

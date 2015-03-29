@@ -10,6 +10,7 @@ namespace OpenMarket\APIBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use JMS\Serializer\DeserializationContext;
+use JMS\Serializer\SerializationContext;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use OpenMarket\APIBundle\Entity\User;
 use OpenMarket\APIBundle\Entity\UserId;
@@ -26,6 +27,7 @@ class UserController extends FOSRestController {
      * annotation.
      *
      * @ApiDoc(
+     *      section = "Users",
      *      output = {
      *          "class" = "OpenMarket\APIBundle\Entity\User",
      *          "groups" = {"Default"}
@@ -46,6 +48,7 @@ class UserController extends FOSRestController {
      * Get a single user.
      *
      * @ApiDoc(
+     *      section = "Users",
      *      output = {
      *          "class" = "OpenMarket\APIBundle\Entity\User",
      *          "groups" = {"Default"}
@@ -67,11 +70,21 @@ class UserController extends FOSRestController {
      */
     public function getUserAction(Request $request, $id)
     {
+
+        $serializerGroup = array('Default');
+
+        $sc = SerializationContext::create();
+        $sc->setGroups($serializerGroup);
+
         $user = $this->get('user_repository')->find(new UserId($id));
         if(!$user){
             throw $this->createNotFoundException("User does not exist.");
         }
-        return $user;
+
+        $view = $this->view($user);
+        $view->setSerializationContext($sc);
+
+        return $this->handleView($view);
     }
 
     /**
@@ -79,17 +92,18 @@ class UserController extends FOSRestController {
      * on a specific pane. It will read all the text until the first
      * annotation.
      *
+     * **Request content**
+     *
+     *      {
+     *          "first_name":"Prueba",
+     *          "last_name":"forlayo"
+     *      }
+     *
+     *
      * @ApiDoc(
      *      resource=true,
-     *      description="This is a description of your API method",
-     *      input = {
-     *          "class" = "OpenMarket\APIBundle\Entity\User",
-     *          "groups" = {"Create"}
-     *      },
-     *      output = {
-     *          "class" = "OpenMarket\APIBundle\Entity\User",
-     *          "groups" = {"Default"}
-     *      },
+     *      section = "Users",
+     *      description="This is a description of your API method",     *
      *      statusCodes = {
      *          201 = "Returned when a new resource is created",
      *          400 = "Returned when the form has errors"
