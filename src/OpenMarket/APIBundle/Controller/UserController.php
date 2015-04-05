@@ -27,10 +27,6 @@ class UserController extends FOSRestController {
      *
      * @ApiDoc(
      *      section = "Users",
-     *      output = {
-     *          "class" = "OpenMarket\APIBundle\Entity\User",
-     *          "groups" = {"Default"}
-     *      },
      *      resource=true,
      *      description="This is a description of your API method"
      *  )
@@ -48,10 +44,6 @@ class UserController extends FOSRestController {
      *
      * @ApiDoc(
      *      section = "Users",
-     *      output = {
-     *          "class" = "OpenMarket\APIBundle\Entity\User",
-     *          "groups" = {"Default"}
-     *      },
      *      statusCodes = {
      *          200 = "Returned when successful",
      *          404 = "Returned when the user is not found"
@@ -70,7 +62,7 @@ class UserController extends FOSRestController {
     public function getUserAction(Request $request, $id)
     {
 
-        $serializerGroup = array('Default');
+        $serializerGroup = array('View');
 
         $sc = SerializationContext::create();
         $sc->setGroups($serializerGroup);
@@ -94,6 +86,8 @@ class UserController extends FOSRestController {
      * **Request content**
      *
      *      {
+     *          "username": "victux",
+     *          "password": "caca",
      *          "first_name":"Prueba",
      *          "last_name":"forlayo"
      *      }
@@ -128,9 +122,11 @@ class UserController extends FOSRestController {
         $serializer->deserialize($json,'OpenMarket\APIBundle\Entity\User','json',$dc);
 
         $validator = $this->get('validator');
-        $violations = $validator->validate($user, null, array('Default'));
+        $violations = $validator->validate($user, null, array('View'));
 
         if($violations->count() == 0){
+            $userPasswordHandler = $this->get('user_password_handler');
+            $userPasswordHandler->encode($user);
             $this->get('user_repository')->add($user);
         }else {
             throw new BadRequestHttpException(implode(PHP_EOL, array('violations' => $violations)));

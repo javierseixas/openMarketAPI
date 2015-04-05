@@ -5,17 +5,29 @@ OpenMarket\APIBundle\Entity\User:
             since_version: 1.0
             expose: true
             type: string
-            groups: [Default]
+            groups: [View]
+        username:
+            since_version: 1.0
+            expose: true
+            type: string
+            serialized_name: username
+            groups: [View,Create]
+        password:
+            since_version: 1.0
+            expose: true
+            type: string
+            serialized_name: password
+            groups: [View,Create]
         firstName:
             since_version: 1.0
             expose: true
             type: string
             serialized_name: first_name
-            groups: [Default,Create]
+            groups: [View,Create]
         lastName:
             since_version: 1.0
             expose: true
             type: string
             serialized_name: last_name
-            groups: [Default,Create]
+            groups: [View,Create]
 

@@ -1,7 +1,3 @@
-camion:
-    type:     rest
-    resource: OpenMarket\APIBundle\Controller\DefaultController
-
 users:
   type:     rest
   resource: OpenMarket\APIBundle\Controller\UserController

@@ -18,6 +18,15 @@ class TokenController extends FOSRestController
 
     /**
      *
+     *  **Request content**
+     *
+     *      {
+     *          "username":"Prueba",
+     *          "password":"forlayo"
+     *      }
+     *
+     *
+     *
      * @ApiDoc(
      *  section="Security",
      *  resource=true,

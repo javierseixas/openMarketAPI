@@ -22,6 +22,11 @@ services:
             - @doctrine.orm.entity_manager
             - @base_user_repository
 
+    user_password_handler:
+        class: OpenMarket\APIBundle\Service\UserPasswordHandler
+        arguments:
+            - @security.encoder_factory
+
     jms_serializer.object_constructor:
         alias: jms_serializer.initialized_object_constructor
         public: false
@@ -30,4 +35,5 @@ services:
          class: OpenMarket\APIBundle\Service\InitializedObjectConstructor
          arguments:
             - @jms_serializer.doctrine_object_constructor
+
 

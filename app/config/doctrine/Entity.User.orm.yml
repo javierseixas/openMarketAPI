@@ -9,6 +9,18 @@ OpenMarket\APIBundle\Entity\User:
             generator:
                 strategy: auto
     fields:
+        username:
+            type: string
+            column: username
+            length: 50
+        password:
+            type: string
+            column: password
+            length: 255
+        salt:
+            type: string
+            column: salt
+            length: 255
         firstName:
             type: string
             column: first_name
