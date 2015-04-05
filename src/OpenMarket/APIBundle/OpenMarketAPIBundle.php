@@ -12,6 +12,5 @@ class OpenMarketAPIBundle extends Bundle
     public function build(ContainerBuilder $container){
         parent::build($container);
         $container->addCompilerPass(new ValidatorCompilerPass());
-        $container->addCompilerPass(new NelmioJmsSerializerParserCompilerPass());
     }
 }

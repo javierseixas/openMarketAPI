@@ -13,7 +13,6 @@ use JMS\Serializer\DeserializationContext;
 use JMS\Serializer\SerializationContext;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use OpenMarket\APIBundle\Entity\User;
-use OpenMarket\APIBundle\Entity\UserId;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use FOS\RestBundle\Controller\Annotations as Rest;
@@ -76,7 +75,7 @@ class UserController extends FOSRestController {
         $sc = SerializationContext::create();
         $sc->setGroups($serializerGroup);
 
-        $user = $this->get('user_repository')->find(new UserId($id));
+        $user = $this->get('user_repository')->find($id);
         if(!$user){
             throw $this->createNotFoundException("User does not exist.");
         }

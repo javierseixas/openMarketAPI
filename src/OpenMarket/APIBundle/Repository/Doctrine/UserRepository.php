@@ -10,7 +10,6 @@ namespace OpenMarket\APIBundle\Repository\Doctrine;
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
-use OpenMarket\APIBundle\Entity\BaseId;
 use OpenMarket\APIBundle\Repository\BaseRepositoryInterface;
 
 
@@ -24,9 +23,9 @@ class UserRepository implements BaseRepositoryInterface{
         $this->entityManager = $entityManager;
     }
 
-    public function find(BaseId $userId)
+    public function find($userId)
     {
-        return $this->entityRepository->find($userId->getValue());
+        return $this->entityRepository->find($userId);
     }
 
     public function findAll()

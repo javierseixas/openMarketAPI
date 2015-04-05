@@ -1,3 +1,0 @@
-OpenMarket\APIBundle\Entity\UserId:
-    exclusion_policy: ALL
-    properties:

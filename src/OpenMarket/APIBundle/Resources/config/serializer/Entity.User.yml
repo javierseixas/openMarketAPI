@@ -4,8 +4,7 @@ OpenMarket\APIBundle\Entity\User:
         id:
             since_version: 1.0
             expose: true
-            inline: true
-            type: OpenMarket\APIBundle\Entity\UserId
+            type: string
             groups: [Default]
         firstName:
             since_version: 1.0

@@ -8,10 +8,8 @@
 
 namespace OpenMarket\APIBundle\Repository;
 
-use OpenMarket\APIBundle\Entity\BaseId;
-
 interface BaseRepositoryInterface{
-    public function find(BaseId $baseId);
+    public function find($id);
 
     public function findAll();
 

@@ -5,9 +5,9 @@ OpenMarket\APIBundle\Entity\User:
     id:
         id:
             type: string
-            length: 50
+            length: 36
             generator:
-                strategy: None
+                strategy: auto
     fields:
         firstName:
             type: string
