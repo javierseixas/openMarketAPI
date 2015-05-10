@@ -21,10 +21,13 @@ security:
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
 
+        doc:
+            pattern: ^/api/doc
+            anonymous: ~
+
         api:
             pattern:   ^/api
             stateless: true
-            anonymous: true
             lexik_jwt: ~
 
         dev:
@@ -35,6 +38,6 @@ security:
             anonymous: ~
 
     access_control:
-        - { path: ^/api/tokens, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api/doc, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/tokens, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }

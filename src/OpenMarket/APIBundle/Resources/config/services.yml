@@ -36,4 +36,7 @@ services:
          arguments:
             - @jms_serializer.doctrine_object_constructor
 
-
+    api_bundle.event.authentication_success_listener:
+            class: OpenMarket\APIBundle\EventListener\AuthenticationSuccessListener
+            tags:
+                - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessResponse }
