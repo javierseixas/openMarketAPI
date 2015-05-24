@@ -37,6 +37,7 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
+        date_default_timezone_set( 'Europe/Madrid' );
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
 }
