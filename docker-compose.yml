@@ -7,6 +7,10 @@ web:
     - db
   volumes:
     - .:/code
+composer:
+  build: ./virtualization/composer
+  volumes:
+    - .:/app
 db:
   build: ./virtualization/db
   ports:
