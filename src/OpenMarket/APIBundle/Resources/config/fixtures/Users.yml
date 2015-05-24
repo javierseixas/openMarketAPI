@@ -1,0 +1,7 @@
+OpenMarket\APIBundle\Entity\User:
+    user1:
+        id: <current>
+        username: <username()>
+        password: adsasdasdasd
+        firstname: <firstName()>
+        lastname: <lastName()>

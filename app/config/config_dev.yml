@@ -1,7 +1,7 @@
 imports:
     - { resource: config.yml }
     - { resource: security_dev.yml }
-
+    - { resource: h4cc_alice_fixtures.yml }
 
 framework:
     router:

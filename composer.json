@@ -26,7 +26,8 @@
         "gfreeau/get-jwt-bundle": "~1.0",
         "victuxbb/jsonpatch": "~1.0",
         "rhumsaa/uuid": "~2.8",
-        "nelmio/cors-bundle": "~1.4"
+        "nelmio/cors-bundle": "~1.4",
+        "h4cc/alice-fixtures-bundle": "0.5.*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
