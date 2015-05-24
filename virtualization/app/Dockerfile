@@ -7,3 +7,5 @@ RUN apt-get update && apt-get install -y \
  php5-intl \
  php5-xdebug
 
+EXPOSE 8000
+ENTRYPOINT ["/code/app/console"]

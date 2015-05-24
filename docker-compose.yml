@@ -1,6 +1,6 @@
 web:
-  build: .
-  command: php /code/app/console server:run 0.0.0.0:8000 -vvv
+  build: ./virtualization/app
+  command: server:run 0.0.0.0:8000 -vvv
   ports:
     - "8000:8000"
   links:
@@ -8,6 +8,9 @@ web:
   volumes:
     - .:/code
 db:
-  build: ./docker_db
+  build: ./virtualization/db
   ports:
     - "5432:5432"
+
+  volumes:
+    - ./virtualization/db:/docker-entrypoint-initdb.d/
