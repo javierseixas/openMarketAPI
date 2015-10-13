@@ -1,0 +1,17 @@
+default:
+  suites:
+    default:
+      contexts:
+        - Knp\FriendlyContexts\Context\ApiContext
+        - Knp\FriendlyContexts\Context\MinkContext
+        - Knp\FriendlyContexts\Context\TableContext
+        - Knp\FriendlyContexts\Context\EntityContext
+  extensions:
+    Knp\FriendlyContexts\Extension:
+      api:
+        base_url: 'http://localhost:8000'
+    Behat\Symfony2Extension: ~
+    Behat\MinkExtension:
+      sessions:
+        my_session:
+          symfony2: ~

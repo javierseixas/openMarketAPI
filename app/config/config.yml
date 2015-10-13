@@ -6,7 +6,6 @@ imports:
     - { resource: lexik_jwt_authentication.yml }
     - { resource: parameters.yml }
     - { resource: services.yml }
-    - { resource: behat.yml }
 
 framework:
     #esi:             ~

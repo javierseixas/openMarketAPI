@@ -27,12 +27,15 @@
         "victuxbb/jsonpatch": "~1.0",
         "nelmio/cors-bundle": "~1.4",
         "h4cc/alice-fixtures-bundle": "0.5.*",
-        "ramsey/uuid": "^2.8"
+        "ramsey/uuid": "^2.8",
+        "knplabs/friendly-contexts": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
         "behat/behat": "^3.0",
-        "behat/symfony2-extension": "^2.1"
+        "behat/symfony2-extension": "^2.1",
+        "behat/mink-extension": "*",
+        "behat/mink-browserkit-driver": "*"
     },
     "scripts": {
         "post-root-package-install": [
